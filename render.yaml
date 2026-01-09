@@ -14,7 +14,10 @@ services:
 
     envVars:
       API_FOOTBALL_KEY:
-        sync: false
-      PYTHON_VERSION: 3.11
+        value: "0ef953667b0b3637e0d99c6444bfcb10"
+      PYTHON_VERSION:
+        value: "3.11"
 
     autoDeploy: true
+
+
