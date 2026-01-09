@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: futebol-backend
+    env: python
+    plan: free
+    region: oregon
+
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+
+    startCommand: |
+      gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+
+    envVars:
+      API_FOOTBALL_KEY:
+        sync: false
+      PYTHON_VERSION: 3.11
+
+    autoDeploy: true
